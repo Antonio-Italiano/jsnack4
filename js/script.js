@@ -19,4 +19,18 @@ const persons = [
     
 ];
 
+// AGGIUNGO ALL'ARRAY UNA NUOVA KEY CON L'INDICAZIONE SE LA PERSONA PUO' GUIDARE IN BASE ALL'ETA'
+persons.forEach((person, i) => {
+    
+    const fullName = `${persons[i].firstname}` + ' ' + `${persons[i].lastname}`;
 
+    if(person.age >= 18) {
+        // SE MAGGIORENNE
+        persons[i].permit = fullName + ' Ha il permesso di guidare';
+    } else {
+        // SE MINORENNE
+        persons[i].permit = fullName + ' Non ha il permesso di guidare';
+    }
+});
+// STAMPO IN CONSOLE IL RISULTATO
+console.log(persons);
